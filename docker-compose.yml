@@ -1,0 +1,15 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: interoperabilidad-rabbitmq
+    ports:
+      - "5900:5672"   # AMQP (backend se conecta aqui). 5672/5673 estan en un rango excluido por Windows (Hyper-V).
+      - "15672:15672" # UI de administracion: http://localhost:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+volumes:
+  rabbitmq_data:
