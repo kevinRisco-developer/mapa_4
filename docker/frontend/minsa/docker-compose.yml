@@ -1,0 +1,30 @@
+version: '2.3'
+services:
+  interoperabilidad-frontend:
+    build:
+      context: ../../..
+      dockerfile: docker/frontend/minsa/Dockerfile
+    image: REEMPLAZAR-registry/interoperabilidad-frontend:1.0.0
+    container_name: interoperabilidad-frontend
+    hostname: interoperabilidad-frontend
+    dns:
+      - 10.10.2.6 # DNS interno de MINSA - solo resuelve dentro de esa red
+      - 10.10.3.6
+    ports:
+      - "REEMPLAZAR_PUERTO:80"
+    cpus: 0.5
+    cpuset: '0'
+    restart: always
+    mem_limit: '512m'
+    networks:
+      interoperabilidad-frontend-network:
+        ipv4_address: REEMPLAZAR_IP
+
+networks:
+  interoperabilidad-frontend-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: REEMPLAZAR_SUBNET
+          gateway: REEMPLAZAR_GATEWAY

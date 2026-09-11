@@ -1,0 +1,18 @@
+# Backend
+msc_backend_mapa/target
+msc_backend_mapa/.mvn
+msc_backend_mapa/src/main/resources/application-local.properties
+msc_backend_mapa/.vscode
+msc_backend_mapa/.idea
+msc_backend_mapa/*.iml
+msc_backend_mapa/HELP.md
+
+# Frontend
+frontend_mapa/node_modules
+frontend_mapa/.angular
+frontend_mapa/dist
+frontend_mapa/.vscode
+
+# Comunes
+.git
+.github

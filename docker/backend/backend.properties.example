@@ -1,0 +1,17 @@
+# =============================================================================
+# backend.properties
+# Copiar a /opt/data/interoperabilidad-backend/properties/backend.properties
+# en el servidor real, con los valores reales (este archivo es solo un ejemplo,
+# no contiene secretos y se sube a git a proposito).
+# Cargado via spring.config.import en application.properties.
+# =============================================================================
+
+spring.mongodb.uri=mongodb://usuario:password@host-real:puerto/miApp?authSource=admin
+
+spring.rabbitmq.host=host-real-de-rabbitmq
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=usuario-real
+spring.rabbitmq.password=password-real
+
+# Dominio real donde queda publicado el frontend (sin barra al final)
+app.cors.allowed-origin=http://ip-o-dominio-del-frontend

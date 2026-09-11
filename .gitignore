@@ -1,5 +1,5 @@
-backend/.mvn
-backend/target
-frontend/node_modules
-frontend/.angular
-backend/src/main/resources/application-local.properties
+msc_backend_mapa/.mvn
+msc_backend_mapa/target
+frontend_mapa/node_modules
+frontend_mapa/.angular
+msc_backend_mapa/src/main/resources/application-local.properties

@@ -1,0 +1,28 @@
+version: '2.3'
+
+services:
+  interoperabilidad-backend:
+    build:
+      context: ../..
+      dockerfile: docker/backend/Dockerfile
+    image: REEMPLAZAR-registry/interoperabilidad-backend:1.0.0
+    container_name: interoperabilidad-backend
+    hostname: interoperabilidad-backend
+    dns:
+      - 10.10.2.6 # DNS interno de MINSA - solo resuelve dentro de esa red
+      - 10.10.3.6
+    ports:
+      - "REEMPLAZAR_PUERTO:8080"
+    volumes:
+      # backend.properties.example (en este repo) muestra el formato esperado.
+      - "/opt/data/interoperabilidad-backend:/opt/data/interoperabilidad-backend"
+    cpus: 0.9
+    cpuset: '1'
+    mem_limit: '1024m'
+    restart: always
+    networks:
+      interoperabilidad-backend-network:
+
+networks:
+  interoperabilidad-backend-network:
+    driver: bridge
